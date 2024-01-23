@@ -13,29 +13,27 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonarqube'
                     withSonarQubeEnv() {
-                       sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Test"
-
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Test"
                     }
                 }
             }
         }
 
-        stage('Quality Gate') {
+        stage("Quality Gate") {
             steps {
-                script {
-                    timeout(time: 1, unit: 'HOURS') {
-                        def reportTaskPath = "${JENKINS_HOME}/workspace/mysonardemo/.scannerwork/report-task.txt"
-                        def ceTaskId = readFile(file: reportTaskPath).trim()
-
-                        echo "ceTaskId: ${ceTaskId}"
-
-                        def qg = waitForQualityGate()
-                        if (qg.status != 'OK') {
-                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-                    }
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded! Ready for deployment.'
+        }
+        failure {
+            echo 'Pipeline failed. Quality Gate check failed.'
         }
     }
 }
