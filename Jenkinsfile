@@ -19,19 +19,17 @@ pipeline {
             }
         }
 
-       stage('Quality Gate') {
-    steps {
-        script {
-            timeout(time: 1, unit: 'MINUTES') {
-                def qg = waitForQualityGate()
-                if (qg.status != 'OK') {
-                    error "Quality Gate failed: ${qg.status}"
+        stage('Quality Gate') {
+            steps {
+                script {
+                    timeout(time: 1, unit: 'MINUTES') {
+                        def qg = waitForQualityGate()
+                        if (qg.status != 'OK') {
+                            error "Quality Gate failed: ${qg.status}"
+                        }
+                    }
                 }
             }
-        }
-    }
-}
-
         }
     }
 
