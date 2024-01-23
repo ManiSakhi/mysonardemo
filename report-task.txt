@@ -1,0 +1,1 @@
+${JENKINS_HOME}/workspace/mysonardemo/.scannerwork/report-task.txt
