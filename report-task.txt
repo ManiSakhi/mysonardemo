@@ -1,1 +1,2 @@
 ${JENKINS_HOME}/workspace/mysonardemo/.scannerwork/report-task.txt
+sonarurl=http://52.202.38.10/
