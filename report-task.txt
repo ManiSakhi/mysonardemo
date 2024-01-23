@@ -1,4 +1,2 @@
 sonarurl=http://52.202.38.10/
 dashboardUrl=http://52.202.38.10/dashboard?id=Test
-ceTaskId=AY01nSDJ37eHO-ykHc9y
-ceTaskUrl=http://52.202.38.10/api/ce/task?id=AY01nSDJ37eHO-ykHc9y
