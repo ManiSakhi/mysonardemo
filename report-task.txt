@@ -1,4 +1,3 @@
-${JENKINS_HOME}/workspace/mysonardemo/.scannerwork/report-task.txt
 sonarurl=http://52.202.38.10/
 dashboardUrl=http://52.202.38.10/dashboard?id=Test
 ceTaskId=AY01nSDJ37eHO-ykHc9y
