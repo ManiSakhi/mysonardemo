@@ -10,21 +10,9 @@ pipeline {
             steps {
                 checkout scm
             }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean install -f MyWebApp/pom.xml'
-            }
-        }
-
-        stage('Code Quality') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh 'mvn -f MyWebApp/pom.xml sonar:sonar'
-                }
-            }
-        }
+        }      
+    }
+    
 
         stage('SonarQube Analysis') {
             steps {
