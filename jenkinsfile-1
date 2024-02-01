@@ -22,13 +22,5 @@ pipeline {
                 }
             }
         }
-
-        // Add more stages as needed
-    }
-
-    post {
-        always {
-            // Add cleanup or finalization steps that should run regardless of the build result
-        }
-    }
+}
 }
