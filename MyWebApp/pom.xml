@@ -4,7 +4,7 @@
   <groupId>com.capone.af</groupId>
   <artifactId>MyWebApp</artifactId>
    <properties>
-        <sonar.host.url>http://52.202.38.10/</sonar.host.url>
+        <sonar.host.url>http://18.212.201.240/</sonar.host.url>
         <!-- Update with your SonarQube server URL -->
     </properties>
   <packaging>war</packaging>
