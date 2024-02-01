@@ -1,2 +1,2 @@
-sonarurl=http://52.202.38.10/
-dashboardUrl=http://52.202.38.10/dashboard?id=Test
+sonarurl=http://18.212.201.240/
+dashboardUrl=http://18.212.201.240/dashboard?id=demo
